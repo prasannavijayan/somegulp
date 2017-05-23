@@ -1,2 +1,6 @@
 // Import Bootstrap Scss
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.box {
+	box-sizing: border-box;
+}

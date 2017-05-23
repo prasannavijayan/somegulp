@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var minifyCSS = require('gulp-csso');
 var htmlmin = require('gulp-html-minifier');
 var concatCss = require('gulp-concat-css');
+var autoprefixer = require('gulp-autoprefixer');
  
 gulp.task('html', function() {
   gulp.src('app/view/*.html')
@@ -15,6 +16,10 @@ gulp.task('css', function(){
     .pipe(sass().on('error', sass.logError))
     .pipe(concatCss('bundle.css'))
     .pipe(minifyCSS())
+    .pipe(autoprefixer({
+    	browsers: ['last 2 versions'],
+    	cascade: false
+    }))
     .pipe(gulp.dest('dist/style'))
 });
 
