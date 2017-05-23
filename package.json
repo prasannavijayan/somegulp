@@ -2,7 +2,7 @@
   "name": "somegulp",
   "version": "1.0.0",
   "description": "Simple Static Website with Gulp",
-  "author": "Prasanna Vijayan",
+  "author": "Prasanna Vijayan <prasannavijayan446@gmail.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
