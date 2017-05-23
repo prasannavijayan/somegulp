@@ -23,6 +23,9 @@
     "build": "gulp default && lite-server -c lite-config.json",
     "dev": "lite-server -w"
   },
+  "bin": {
+    "somegulp": "bin/commands.js"
+  },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "gulp": "^3.9.1",
@@ -32,5 +35,8 @@
     "gulp-html-minifier": "^0.1.8",
     "gulp-sass": "^3.1.0",
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.7"
   }
 }
