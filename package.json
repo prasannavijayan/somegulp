@@ -20,14 +20,14 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "build": "gulp default && lite-server -c lite-config.json",
-    "dev": "lite-server -w"
+    "dev": "gulp default"
   },
   "bin": {
     "somegulp": "bin/commands.js"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.6",
+    "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat-css": "^2.3.0",

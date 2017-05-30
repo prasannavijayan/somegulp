@@ -1,4 +1,5 @@
 {
   "port": 8000,
+  "files": ["./app/**/*.{html,htm,css,scss,js}"],
   "server": { "baseDir": "./dist" }
 }
