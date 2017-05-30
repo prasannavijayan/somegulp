@@ -1,6 +1,83 @@
 // Import Bootstrap Scss
 @import "node_modules/bootstrap/scss/bootstrap";
 
-.box {
-	box-sizing: border-box;
+// Variables
+$white: #FFF !default;
+$green: #3cba54 !default;
+$blue: #4885ed !default;
+$yellow: #f4c20d !default;
+$red: #db3236 !default;
+$black: #555 !default;
+
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
+
+* {
+	font-family: "Oxygen", sans-serif;
+	color: $black;
+}
+
+// Underline
+.undl {
+	border-bottom: 3px solid;
+	width: 60px;
+	margin-bottom: 30px;
+	&-green {
+		border-color: $green;
+	}
+
+	&-red {
+		border-color: $red;
+	}
+
+	&-yellow {
+		border-color: $yellow;
+	}
+
+	&-blue {
+		border-color: $blue;
+	}
+}
+
+// herounit
+.herounit {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $blue;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	&_title {
+		font-size: 72px;
+		color: $white;
+		text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	}  
+	&_subheading {
+		font-size: 32px;
+		color: $white;
+		text-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.15);
+	}
+}
+
+.section {
+	padding-top: 60px;
+	padding-bottom: 30px;
+	&_title {
+		font-size: 32px;
+	}
+}
+
+
+// Flex
+.flexme {
+	display: flex;
+}
+
+.flex {
+	&-start-end {
+		@extend .flexme;
+		justify-content: space-between;
+	}
 }
