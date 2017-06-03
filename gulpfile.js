@@ -5,6 +5,14 @@ var htmlmin = require('gulp-html-minifier');
 var concatCss = require('gulp-concat-css');
 var autoprefixer = require('gulp-autoprefixer');
 var browsersync = require('browser-sync').create();
+var image = require('gulp-image');
+ 
+gulp.task('image', function () {
+  gulp.src('./app/image/*')
+    .pipe(image())
+    .pipe(gulp.dest('./dist/images'))
+    .pipe(browsersync.stream());
+});
 
 // HTML
 gulp.task('html', function() {
@@ -38,7 +46,7 @@ gulp.task('browser-sync', function() {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['css', 'html'], function() {
+gulp.task('serve', ['css', 'html', 'image'], function() {
 
     browsersync.init({
         server: "./dist"

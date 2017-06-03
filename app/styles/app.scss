@@ -8,14 +8,94 @@ $blue: #4885ed !default;
 $yellow: #f4c20d !default;
 $red: #db3236 !default;
 $black: #555 !default;
+$lightsnow: #F5F5F5 !default;
+$graysnow: #636c72 !default;
 
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,600');
 
 * {
 	font-family: "Oxygen", sans-serif;
 	color: $black;
+}
+
+.text {
+	&-white {
+		color: $white;
+	}
+
+
+	&-light {
+		font-weight: 300;
+	}
+}
+
+.gray {
+	color: $graysnow !important;
+	* {
+		color: $graysnow;
+	}
+}
+
+// Navbar 
+.navbar {
+	@extend .small;
+}
+
+.opensans {
+	font-family: "Open Sans", sans-serif !important;
+}
+
+.merri {
+	font-family: "Merriweather", sans-serif !important;
+}
+
+.mini {
+	font-size: 11px;
+}
+
+.small {
+	font-size: 14px;
+
+	&-bold {
+		font-weight: 600;
+		color: $blue;
+	}
+}
+
+.medium {
+	font-size: 16px;
+
+	&-bold {
+		font-weight: 600;
+	} 
+
+	em {
+		font-weight: 400;
+	}
+}
+
+.position {
+	@extend .mini;
+	font-size: 12px;
+}
+
+.caps {
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+
+.details {
+	p {
+		@extend .opensans;
+	}
+}
+
+p {
+	margin: 0;
 }
 
 // Underline
@@ -42,13 +122,13 @@ $black: #555 !default;
 
 // herounit
 .herounit {
-  height: 60vh;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: $blue;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.27);
 	&_title {
 		font-size: 72px;
 		color: $white;
@@ -59,7 +139,13 @@ $black: #555 !default;
 		color: $white;
 		text-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.15);
 	}
+
+	&_green {
+		@extend .herounit;
+		background: $green;
+	}
 }
+
 
 .section {
 	padding-top: 60px;
@@ -67,6 +153,44 @@ $black: #555 !default;
 	&_title {
 		font-size: 32px;
 	}
+
+	&-resume {
+		@extend .section;
+		background: $lightsnow;
+	}
+
+	&-gray {
+		background: $lightsnow;
+	}
+
+	&_green {
+		@extend .flex-center;
+		background: url("../images/gray.png") no-repeat;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.27);
+	}
+
+	&_play {
+		@extend .flex-center;
+		background: url("../images/play.png") no-repeat;
+		background-position: center;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.27);
+	}
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.resume {
+	@extend .merri;
+	padding: 30px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: $white;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.20);
 }
 
 
@@ -79,5 +203,39 @@ $black: #555 !default;
 	&-start-end {
 		@extend .flexme;
 		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+// experience
+.experience {
+	p {
+		line-height: 25px;
+	}
+
+	.divider {
+		height: 30px;
+	}
+
+	.mini-divider {
+		height: 10px;
+	}
+}
+
+.projects {
+	@extend .experience;
+	p {
+		line-height: 20px;
+	}
+	.mini-divider {
+		height: 10px;
+	}
+}
+
+.image {
+	img {
+		height: 175px;
+		border-radius: 175px;
+		border: 5px solid $graysnow;
 	}
 }
